@@ -121,7 +121,7 @@ def cartao_grafico(titulo, descricao, figura, legenda=False, variante="temperatu
                 ],
                 className=f"chart-legend chart-legend--{variante}",
             ) if legenda else None,
-            dcc.Graph(figure=figura, config={"displayModeBar": False, "responsive": True}, className="chart-graph"),
+            dcc.Graph(figure=figura, config={"displayModeBar": False, "responsive": True}, className="chart-graph", style={"height": "310px"}),
         ],
         className="chart-card",
     )
@@ -264,7 +264,7 @@ def servir_layout():
                         className="filter-panel",
                         style={"display": "none"},
                     ),
-                    dcc.Loading(html.Main(id="conteudo-aba", className="tab-content"), type="circle", color=cores["umidade"]),
+                    dcc.Loading(html.Main(id="conteudo-aba", className="dashboard-content"), type="circle", color=cores["umidade"]),
                     html.Footer("Clima do Armário  ·  Leituras do sensor ESP32 + DHT22", className="footer"),
                 ],
                 className="app-container",
